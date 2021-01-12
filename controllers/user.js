@@ -1,5 +1,7 @@
 'use strict';
 
+var {authenticate} = require('../middleware/authenticate');
+
 module.exports = function(passport, validation, email, User, Lawyer, CaseRequest) {
   return {
                             setRouting : function(router) {                              
@@ -21,12 +23,11 @@ module.exports = function(passport, validation, email, User, Lawyer, CaseRequest
 
             //elements
 
-                                       router.get('/elements', this.
-                                       elements);
+                                       
 
             //case-details
 
-                                          router.get('/cases_details', this.cases_details);
+                                          router.get('/cases_details', authenticate, this.cases_details);
 
          
         //contact
@@ -41,7 +42,7 @@ module.exports = function(passport, validation, email, User, Lawyer, CaseRequest
 
      //profile get router
 
-                            router.get('/profile', this.profileView);
+                            router.get('/profile', authenticate, this.profileView);
 
 
       //profile post router
@@ -49,16 +50,16 @@ module.exports = function(passport, validation, email, User, Lawyer, CaseRequest
       //profileUpdated post router
               // router.post('/profile/update',this.updateProfile);
       //delete case get router
-                   router.get('/deletecase/:id', this.deletecase);
+                   router.get('/deletecase/:id', authenticate, this.deletecase);
 
                       
 
         //case studies
 
-                        router.get('/cases', this.cases);
+                        router.get('/cases',authenticate, this.cases);
 
         //Route client cases to lawyer
-                              router.get('/client/case',this.client_cases);
+                              router.get('/client/case', authenticate, this.client_cases);
 
         // //userform get route
 
@@ -69,7 +70,7 @@ module.exports = function(passport, validation, email, User, Lawyer, CaseRequest
         //                   router.post('/userform', validation.userformValidation, this.userform);
 
         //route lawyer add cases
-        router.get('/lawyer/cases/:lawyer_id',this.lawyer_cases);
+        router.get('/lawyer/cases/:lawyer_id', authenticate, this.lawyer_cases);
       //submit route
                                   router.post('/addcase',validation.addCaseValidation, this.addcase);
 
@@ -77,8 +78,8 @@ module.exports = function(passport, validation, email, User, Lawyer, CaseRequest
                           router.get('/auth/google/callback', this.googleLoginCallback);
                           router.get('/login', this.loginView);
                           
-                          router.get('/user/update-profile', this.userProfileUpdate);  
-                          router.get('/user/hire-a-lawyer', this.hireALawyerView);
+                          router.get('/user/update-profile', authenticate, this.userProfileUpdate);  
+                          router.get('/user/hire-a-lawyer', authenticate, this.hireALawyerView);
                           
                           router.post('/user/hire-a-lawyer', this.hireALawyer);
 
@@ -106,7 +107,7 @@ module.exports = function(passport, validation, email, User, Lawyer, CaseRequest
                               router.post('/reset_password', validation.resetPassword, this.resetPassword);
 
              //dashboard get route
-                            router.get('/dashboard', this.dashboardView);
+                            router.get('/dashboard', authenticate, this.dashboardView);
                             router.get('/logout', this.logOut);
 
               // dashboard post route
