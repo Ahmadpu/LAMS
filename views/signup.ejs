@@ -1,0 +1,336 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+                <meta charset="utf-8">
+                <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <title>Lawyer HTML-5 Template </title>
+                <meta name="description" content="">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="manifest" href="site.webmanifest">
+                <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <!-- CSS here -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+
+<body class="body-bg">
+
+
+<header>
+
+
+            <!--? Header Start -->
+                                        <div class="header-area">
+                                            <div class="main-header  header-sticky">
+                                        <div class="container-fluid">
+                                            <div class="row align-items-center">
+
+
+
+                <!-- Logo -->
+
+                  
+                                        <div class="col-xl-2 col-lg-2 col-md-1">
+                                            <div class="logo">
+                                                <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-10 col-lg-10 col-md-10">
+                                            <div class="menu-main d-flex align-items-center justify-content-end">
+             <!-- Main-menu -->
+
+
+
+                                                    <div class="main-menu f-right d-none d-lg-block">
+                                                        <nav> 
+                                                            <ul id="navigation">
+                                                                <li><a href="/">Home</a></li>
+                                                                <li><a href="/about">About</a></li>
+                                                                <li><a href="/services">Services</a></li>
+                                                                <li><a href="/cases">Case Studies </a></li>
+                                                            
+                                                                <li><a href="/blog">Blog</a>
+                                                                    <ul class="submenu">
+                                                                        <li><a href="/blog">Blog</a></li>
+                                                                        <li><a href="blog_details">Blog Details</a></li>
+                                                                        <li><a href="/elements">Element</a></li>
+                                                                        <li><a href="/cases_details">Case Details </a></li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li><a href="/contact">Contact</a></li>
+                                                            </ul>
+                                                        </nav>
+                                                    </div>
+
+
+                                <div class="header-right-btn f-right d-none d-lg-block ml-30">
+                                    <a href="/auth/facebook"><i style="color: black;" class="fab fa-facebook-f"></i></a>
+                                    <a  href="/auth/google"><i style="margin-left: 20px; color: black;" class="fas fa-globe"></i></a>
+                                    
+                                        </div>
+                                    </div>   
+      <!-- Mobile Menu -->
+                            
+                                            <div class="col-12">
+                                                <div class="mobile_menu d-block d-lg-none"></div>
+                                            </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    <!-- Header End -->
+                                                </header>
+
+
+
+
+    <!-- Contact form Start -->
+                    <div class="contact-form bg-height pb-top" data-background="assets/img/gallery/section_bg05.png">
+                        <div class="container">
+        
+    <!-- Errors -->
+        
+                        <div style="text-align: center; width: 50%;" class="container">
+
+
+                                                            <% if(hasErrors) { %>
+                                                                <div class="alert alert-danger alert-dismissible" id="box" role="alert">
+                                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                                        <span aria-hidden="true" id="close">&times;</span>
+                                                                    </button>
+                                                                    <% _.forEach(errors, function(error) { %>
+                                                                            <p><%= error %></p>
+                                                                    <% }) %>
+                                                                </div>
+                                                            <% } %>
+
+                                                        </div>
+
+                                            <div class="row justify-content-center">
+                                                <div class="col-xl-8 col-lg-8">
+                                                    <div class="form-wrapper">
+
+                                                        
+      <!--Section Tittle  -->
+
+
+
+
+                                                    <div class="row ">
+                                                        <div class="col-xl-12">
+                                                            <div class="section-tittle section-tittle2 mb-70">
+                                                                <span>Only For Lawyer</span>
+                                                                <h2>Creat Your account .It's free and only takes a minute!</h2>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+        <!--End Section Tittle  -->
+
+
+
+            <!--signup page start-->
+
+            
+
+                    <form id="contact-form" action="/signup" method="POST">
+                    <div class="row">
+
+
+                                                                <div class="col-lg-6 col-md-6">
+                                                                    <div class="form-box user-icon mb-30">
+                                                                        <input type="text" name="first_name" required placeholder="First Name">
+                                                                    </div>
+                                                                </div>
+
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-box user-icon mb-30">
+                                    <input type="text" name="last_name" required placeholder="Last Name">
+                                </div>
+                            </div>
+
+
+                                                                <div class="col-lg-6 col-md-6">
+                                                                    <div class="form-box subject-icon mb-30">
+                                                                        <input type="text" name="cnic" required placeholder="CNIC NO:">
+                                                                    </div>
+                                                                </div>
+
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-box subject-icon mb-30">
+                                <input type="text" name="contact_number" required placeholder="Phone NO:">
+                            </div>
+                        </div>
+
+                                                                <div class="col-lg-6 col-md-6">
+                                                                    <div class="form-box email-icon mb-30">
+                                                                        <input type="text" name="email" required placeholder="Email">
+                                                                    </div>
+                                                                </div>
+                                                            
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-box email-icon mb-30">
+                                <input type="password" name="password" required placeholder="Password">
+                            </div>
+                        </div>
+                       
+                        
+                  
+                                                                <div class="submit-info">
+                                                                        <button class="submit-btn2" type="submit">Register</button>
+                                                                </div>
+
+
+                                                    </div>   
+                                                </div>
+                                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <!--signup page End-->
+
+
+
+    <footer>
+
+
+        <!--? Footer Start-->
+
+
+                                        <div style="margin-top: 150px;" class="footer-area section-bg" data-background="assets/img/gallery/footer_bg.jpg">
+                                            <div class="container">
+                                                <div class="footer-top footer-padding">
+                                                    <div class="row d-flex justify-content-between">
+                                                        <div class="col-xl-3 col-lg-4 col-md-5 col-sm-8">
+                                                            <div class="single-footer-caption  mb-50">
+ <!-- logo -->
+
+
+                    <div class="footer-logo">
+                        <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                    </div>
+                    <div class="footer-tittle">
+                        <div class="footer-pera">
+                            <p class="info1">Receive updates and latest news direct from Simply enter.</p>
+                        </div>
+                    </div>
+                                                                                <div class="footer-number">
+                                                                                    <h4><span>+92 </span>3044110585</h4>
+                                                                                    <p>youremail@gmail.com</p>
+                                                                                  </div>
+                                                                                       </div>
+                                                                                   </div>
+                    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Our Support</h4>
+                                <ul>
+                                    <li><a href="#">Advanced</a></li>
+                                    <li><a href="#"> Management</a></li>
+                                    <li><a href="#">Corporate</a></li>
+                                    <li><a href="#">Customer</a></li>
+                                    <li><a href="#">Information</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                                                                <div class="col-xl-2 col-lg-2 col-md-3 col-sm-5">
+                                                                    <div class="single-footer-caption mb-50">
+                                                                        <div class="footer-tittle">
+                                                                            <h4>Quick Link</h4>
+                                                                            <ul>
+                                                                                <li><a href="#">New Law</a></li>
+                                                                                <li><a href="#">About</a></li>
+                                                                                <li><a href="#">Privacy Policy</a></li>
+                                                                                <li><a href="#">Licenses</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+                    <div class="single-footer-caption mb-50">
+                        <div class="footer-tittle">
+                            <h4>Newslatter</h4>
+                            <div class="footer-pera">
+                                <p class="info1">Subscribe now to get daily updates</p>
+                            </div>
+                        </div>
+
+
+       <!-- Form start in footer -->
+
+
+                                <div class="footer-form">
+                                    <div id="mc_embed_signup">
+                                        <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part" novalidate="true">
+                                            <input type="email" name="EMAIL" id="newsletter-form-email" placeholder=" Email Address " class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'">
+                                            <div class="form-icon">
+                                                <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
+                                                    Send
+                                                </button>
+                                            </div>
+                                            <div class="mt-10 info"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="footer-bottom">
+                                                <div class="row d-flex justify-content-between align-items-center">
+                                                    <div class="col-xl-9 col-lg-8">
+                                                        <div class="footer-copy-right">
+                                                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 col-lg-4">
+                                                        <!-- Footer Social -->
+                                                        <div class="footer-social f-right">
+                                                            <a href="/auth/facebook"><i  class="fab fa-facebook-f"></i></a>
+                                                            <a  href="/auth/google"><i style="margin-left: 20px; " class="fas fa-globe"></i></a>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+        <!-- Footer End-->
+    </footer>
+    
+</body>
+
+
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+                            <script>
+                                        $('#close').on('click', function(){
+                                            $('#box').fadeOut();
+                                        });
+                           </script>
+    </html>

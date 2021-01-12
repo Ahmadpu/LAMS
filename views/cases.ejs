@@ -1,0 +1,476 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+
+    <style>
+        table {
+          border-collapse: collapse;
+          border-spacing: 0;
+          width: 100%;
+          border: 1px solid #ddd;
+        }
+        
+        th, td {
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        <!--button-->
+        body {
+          font-family: "Lato", sans-serif;
+        }
+        
+        .sidebar {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+        }
+        
+        .sidebar a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+        
+        .sidebar a:hover {
+          color: #f1f1f1;
+        }
+        
+        .sidebar .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        
+        .openbtn {
+          font-size: 20px;
+          cursor: pointer;
+          background-color: blue;
+          color: white;
+          padding: 10px 15px;
+          border: none;
+        }
+        
+        .openbtn:hover {
+          background-color: lightblue;
+        }
+        
+        #main {
+          transition: margin-left .5s;
+          padding: 16px;
+        }
+        
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+          .sidebar {padding-top: 15px;}
+          .sidebar a {font-size: 18px;}
+        }
+        </style>
+        
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Lawyer HTML-5 Template </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+
+
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="body-bg">
+<!--? Preloader Start -->
+
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+            <div class="preloader-circle"></div>
+            <div class="preloader-img pere-text">
+                <img src="assets/img/logo/loder.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<header>
+    <!--? Header Start -->
+    <!-- Header End -->
+</header>
+<main>
+    <!--? Hero Start -->
+
+
+                  
+  
+    <div class="slider-area2">
+        
+
+        <div style="text-align: center; width: 50%;" class="container">
+            <% if(hasErrors) { %>
+              <div class="alert alert-danger alert-dismissible" id="box" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true" id="close">&times;</span>
+                    </button>
+                  <% _.forEach(errors, function(error) { %>
+                          <p><%= error %></p>
+                  <% }) %>
+              </div>
+          <% } %>
+          <% if(hasSuccess) { %>
+              <div class="alert alert-success alert-dismissible" id="box" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true" id="close">&times;</span>
+                    </button>
+                  <% _.forEach(messages, function(message) { %>
+                          <p><%= message %></p>
+                  <% }) %>
+              </div>
+          <% } %>
+          </div>              
+
+
+
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="/cases">Cases Detail</a>
+            <a href="#">Services</a>
+            <a href="/client/case">Clients</a>
+            <a href="#">Logout</a>
+          </div>
+          
+          <div id="main">
+            <button class="openbtn" onclick="openNav()">☰</button>  
+          </div>
+        
+          <form action="/addcase" method="POST">
+
+                <div class="slider-height2  d-flex align-items-center">
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap hero-cap2 text-center">
+                            <div class="container">
+        
+      
+                                <!-- Button to Open the Modal -->
+                               
+                               
+                                                                <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                                                + Add New Case
+                                                                </button>
+                                     
+                                       <!-- The Modal -->
+                               
+                               
+                                                                   <div class="modal fade" id="myModal">
+                                                                   <div class="modal-dialog">
+                                                                       <div class="modal-content">
+                                           
+                                     <!-- Modal Header -->
+                               
+                               
+                                                                                       <div class="modal-header">
+                                                                                           <h4 class="modal-title">Add a new Case:</h4>
+                                                                                           <button type="button"  class="close" data-dismiss="modal">&times;</button>
+                                                                                       </div>
+                                             
+                                   <!-- Modal body -->
+                               
+                               
+                                                                   <div class="modal-body">
+                                                                       <label for="case_number">Case Number:</label>
+                                                                       <input name="case_number" type="text" class="form-control" placeholder="Enter Case Number" />
+                                                                   </div>
+                                             
+
+                                <div class="modal-body">
+                                <label for="case_type">Case Type:</label>
+                                <input name="case_type" type="text" class="form-control" placeholder="Enter Case Type" />
+                            </div>
+
+
+                                                    <div class="modal-body">
+                                                        <label for="client_city">Client City:</label>
+                                                        <input name="client_city" type="text" class="form-control" placeholder="Enter Case Description" />
+                                                    </div>
+
+
+                                                    <div class="modal-body">
+                                                        <label for="client_name">Client Name:</label>
+                                                        <input name="client_name" type="text" class="form-control" placeholder="Enter Client Name" />
+                                                    </div>
+
+
+
+
+                                                <div class="modal-body">
+                                                    <label for="cnic">Client CNIC:</label>
+                                                    <input name="cnic" type="text" class="form-control" placeholder="Enter Client CNIC" />
+                                                </div>
+                                   <!-- Modal footer -->
+
+                                   
+                                 
+                               
+                                                                       <div class="modal-footer">
+                                                                           <button type="submit" class="btn btn-primary">Submit</button>
+                                                                       </div>
+                                                                       
+                                                                       </div>
+                                                                   </div>
+                                                                   </div>
+                                                                   
+                                                               </div>
+                                  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+    <!-- Hero End -->
+
+
+    <!--? table Start -->
+
+
+    
+    <div class="services-area section-padding30">
+        <div class="container">
+            <div class="row align-items-end mb-50">
+                <div class="cl-xl-12 col-lg-12 col-md-10">
+                    <div style="overflow-x:auto;">
+                        <table>
+                            <tr>
+                                <th>Case Number</th>
+                                <th>Case Type</th>
+                                <th>Client City</th>
+                                <th>Client Name</th>
+                                <th>Client CNIC</th>
+                                
+                            </tr>
+                            <% _.forEach(cases, function(c, index) { %>
+                                <tr>
+                                    <td><%= c.case_number %></td>
+                                    <td><%= c.case_type %></td>
+                                    <td><%= c.client_city %></td>
+                                    <td><%= c.client_name %></td>
+                                    <td><%= c.cnic %></td>
+                                    <td><a href="/deletecase/<%= index %>" class="btn btn-primary">Delete Case</a></td>
+                                </tr>
+                            <% }) %>
+                                                                                                
+
+                        </table>
+
+                      </div>
+                      
+                    
+                </div>
+                
+        </div>
+    </div>
+    <!-- End table -->
+</main>
+<footer>
+    <!--? Footer Start-->
+    <div class="footer-area section-bg" data-background="assets/img/gallery/footer_bg.jpg">
+        <div class="container">
+            <div class="footer-top footer-padding">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-3 col-lg-4 col-md-5 col-sm-8">
+                        <div class="single-footer-caption mb-50">
+
+
+    <!-- logo -->
+
+
+    <div class="footer-logo">
+        <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+    </div>
+    <div class="footer-tittle">
+        <div class="footer-pera">
+            <p class="info1">Receive updates and latest news direct from Simply enter.</p>
+        </div>
+    </div>
+                                                                <div class="footer-number">
+                                                                    <h4><span>+92 </span>3044110585</h4>
+                                                                    <p>youremail@gmail.com</p>
+                                                                  </div>
+                                                                       </div>
+                                                                   </div>
+    <div class="col-xl-2 col-lg-2 col-md-3 col-sm-5">
+        <div class="single-footer-caption mb-50">
+            <div class="footer-tittle">
+                <h4>Our Support</h4>
+                <ul>
+                    <li><a href="#">Advanced</a></li>
+                    <li><a href="#"> Management</a></li>
+                    <li><a href="#">Corporate</a></li>
+                    <li><a href="#">Customer</a></li>
+                    <li><a href="#">Information</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+                                                <div class="col-xl-2 col-lg-2 col-md-3 col-sm-5">
+                                                    <div class="single-footer-caption mb-50">
+                                                        <div class="footer-tittle">
+                                                            <h4>Quick Link</h4>
+                                                            <ul>
+                                                                <li><a href="#">New Law</a></li>
+                                                                <li><a href="#">About</a></li>
+                                                                <li><a href="#">Privacy Policy</a></li>
+                                                                <li><a href="#">Licenses</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+<div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+    <div class="single-footer-caption mb-50">
+        <div class="footer-tittle">
+            <h4>Newslatter</h4>
+            <div class="footer-pera">
+                <p class="info1">Subscribe now to get daily updates</p>
+            </div>
+        </div>
+
+
+<!-- Form start in footer -->
+
+
+                <div class="footer-form">
+                    <div id="mc_embed_signup">
+                        <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part" novalidate="true">
+                            <input type="email" name="EMAIL" id="newsletter-form-email" placeholder=" Email Address " class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'">
+                            <div class="form-icon">
+                                <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
+                                    Send
+                                </button>
+                            </div>
+                            <div class="mt-10 info"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                            <div class="footer-bottom">
+                                <div class="row d-flex justify-content-between align-items-center">
+                                    <div class="col-xl-9 col-lg-8">
+                                        <div class="footer-copy-right">
+                                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-4">
+                                        <!-- Footer Social -->
+                                        <div class="footer-social f-right">
+                                            <a href="/auth/facebook"><i  class="fab fa-facebook-f"></i></a>
+                                            <a  href="/auth/google"><i style="margin-left: 20px; " class="fas fa-globe"></i></a>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!-- Footer End-->
+</footer>
+
+<!-- Scroll Up -->
+<div id="back-top" >
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
+
+<script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+    }
+    </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $('#close').on('click', function(){
+        $('#box').fadeOut();
+    });
+</script>
+
+    <!-- JS here -->
+
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/animated.headline.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.js"></script>
+
+    <!-- Nice-select, sticky -->
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/jquery.sticky.js"></script>
+
+    <!-- counter , waypoint -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="./assets/js/jquery.counterup.min.js"></script>
+    
+    <!-- contact js -->
+    <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/jquery.form.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script src="./assets/js/mail-script.js"></script>
+    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+    
+    <!-- Jquery Plugins, main Jquery -->	
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+    
+</body>
+</html>
