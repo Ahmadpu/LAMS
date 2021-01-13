@@ -65,7 +65,7 @@ module.exports = function (Lawyer, User) {
                     
                 }
 
-                return res.redirect('/admin/user-list');
+                return res.redirect('/admin/user-list.ejs');
             });
             
         }

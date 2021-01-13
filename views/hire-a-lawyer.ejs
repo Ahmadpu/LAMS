@@ -143,7 +143,7 @@
                                 <th>Lawyer Name</th> 
                                 <th>Lawyer  CNIC</th>
                                 <th>Lawyer  Address</th>
-                                <th>Lawyer  ID</th>
+                                <th>Lawyer  Specialization</th>
                                 <th>Hire</th>
                                 <th>Cases Added By Lawyer</th>
 
@@ -153,7 +153,7 @@
                                     <td><%= lawyer.first_name + " " + lawyer.last_name %> </td> 
                                      <td><%= lawyer.cnic %> </td> 
                                     <td> <%= lawyer.address %> </td>
-                                    <td> <%= lawyer._id %> </td>
+                                    <td> <%= lawyer.specialization %> </td>
                                     <td>
                                         <button type="button"  id="<%= lawyer._id %>" class="btn btn-primary modal-opener" >
                                             Hire the Lawyer

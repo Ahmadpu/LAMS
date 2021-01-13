@@ -372,6 +372,7 @@ module.exports = function(passport, validation, email, User, Lawyer, CaseRequest
                                           contact_number:req.body.contact_number,
                                           email:req.body.email,
                                           address:req.body.address,
+                                          specialization:req.body.specialization,
                                           city:req.body.city,
                                         }, function (savedLawyer) {
                                         req.flash('success', ['Your profile has been updated']);
