@@ -3,6 +3,7 @@ var dependable = require('dependable');
 // Creating Container 
 var container = dependable.container();
 var path = require('path');
+var mongoose = require('mongoose');
 
 var simpleDependencies = [
   ['_', 'lodash'],
@@ -12,7 +13,9 @@ var simpleDependencies = [
   ['async', 'async'],
   // Users
   ['User', './models/user-model'],
+  ['mongoose', 'mongoose'],
   ['CaseRequest', './models/case_request'],
+  ['Blog', './models/blog-model'],
   ['Lawyer', './models/lawyer-model']
 ];
 

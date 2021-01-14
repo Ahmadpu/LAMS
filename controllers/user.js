@@ -2,7 +2,7 @@
 
 var {authenticate} = require('../middleware/authenticate');
 
-module.exports = function(passport, validation, email, User, Lawyer, CaseRequest) {
+module.exports = function(passport, validation, email, User, Lawyer, CaseRequest,Blog,mongoose) {
   return {
                             setRouting : function(router) {                              
                               router.get('/', this.homePage);
@@ -39,7 +39,15 @@ module.exports = function(passport, validation, email, User, Lawyer, CaseRequest
                               router.get('/auth/facebook', this.authFacebook);
           
                                router.get('/auth/facebook/callback', this.facebookLoginCallback);
-
+      //blog Router
+                //blog get route
+                              router.get('/blog/view', this.blogView);
+                //blog post route
+                              router.get('/blog/Add',this.blogAdd);
+                //Blog delete route
+                              // router.delete('/blog/delete',this.blogDelete);
+                //Blog Update Route
+                              // router.patch('/blog/update',this.blogUpdate);             
      //profile get router
 
                             router.get('/profile', authenticate, this.profileView);
@@ -197,7 +205,7 @@ module.exports = function(passport, validation, email, User, Lawyer, CaseRequest
                 console.log(success);
 
                 // get all lawyers
-                let lawyers  = await Lawyer.find({});
+                let lawyers  = await Lawyer.find({}).lean();
 
                 res.render("hire-a-lawyer", {lawyers: lawyers, hasErrors: errors.length > 0, errors: errors, hasSuccess: success.length > 0, messages: success, user: req.user});
     },
@@ -445,8 +453,48 @@ module.exports = function(passport, validation, email, User, Lawyer, CaseRequest
                                           blog : function(req, res){
                                             res.render('blog.ejs');
                                       },
+          //Blog get route define
+                      blogView :  async function(req,res) {
+                        const blogs = Blog.find({});
+                        const message = req.flash('success'['blog pages renders']);
+                        res.render('blog_add.ejs',{blogs:blogs,hasmessage:message.length>0,message:message[0]});
+                      },
+          // //Blog post(ADD) route define
+                      blogAdd : function(req,res) {
 
-     //route of blog_details
+                        const blog = new Blog({
+                          _id : new mongoose.Types.ObjectId(),
+                        blogimage : req.body.blogimage,
+                        title : req.body.title,
+                        description : req.body.description,
+                        tag : req.body.tag
+                      });
+                        blog.save().then(blogSaved =>{
+                          if(blogSaved){
+                            req.flash("sucess"["Info! Blog Added Successfully"])
+                            res.redirect('blog_add.ejs',);
+                          }
+                        }).catch(err=>{
+                          console.log(err)
+                        });
+                      },
+          // //Blog Delete route define
+          //             BlogDelete : async function(req,res) {
+          //                 let blogId = req.params.blog_id;   
+          //               Blog.Remove( {_id: blog_id},function(err) {
+          //                 if(!err){
+          //                   req.flash(message,["User has been removed"]);
+          //                 }if(err){
+          //                   req.flash(message,['Blg has not been deleted of id: ',]);
+          //                 }
+          //               return res.redirect('/.ejs')
+          //               })         
+          //             },
+          // //Blog Update route define
+          //             blogUpdate : function(req,res) {
+                                    
+          //             },
+          //route of blog_details
 
 
                                                         blog_details : function(req, res){

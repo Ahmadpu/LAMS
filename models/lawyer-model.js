@@ -11,6 +11,7 @@ const LawyerSchema = mongoose.Schema({
   email : {type : String, unique : true, required: true},
   address: {type: String, default: ''},
   password: {type: String, default: ''},
+  specialization: {type: String, default: ''},
   cases:{type:Array ,default: []},
   resetPasswordToken: {type: String, required: false},
   resetPasswordExpires: {type: Date, required: false}
@@ -20,7 +21,6 @@ const LawyerSchema = mongoose.Schema({
 LawyerSchema.methods.encryptPassword = function(password) {
   return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null);
 }
-
 LawyerSchema.methods.comparePassword = function(password) {
   return bcrypt.compareSync(password, this.password);
 }
