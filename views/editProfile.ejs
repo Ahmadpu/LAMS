@@ -109,7 +109,7 @@
     <a href="/cases">Cases Detail</a>
     <a href="#">Services</a>
     <a href="#">Clients</a>
-    <a href="/edit">Edit Profile</a>
+    <a href="#">Edit Profile</a>
     <a href="/logout">Logout</a>
   </div>
   
@@ -140,13 +140,107 @@
 <% } %>
 </div>
 
-    <div align="center">
-        <h1>Hi Lawyer : <b style="text-transform: capitalize;"><%= lawyer.first_name %></b></h1>
+    
+  <div class="contact-form bg-height pb-top" data-background="assets/img/gallery/section_bg05.png">
+  
+    <div class="container">
+                
+        <div class="row justify-content-center">
+            
+            <div class="col-xl-8 col-lg-8">
+                <div class="form-wrapper">
+                <!--Section Tittle  -->
+                    <div class="row ">
+                        <div class="col-xl-12">
+                            <div class="section-tittle section-tittle2 mb-70">
+                                <span>Only For Lawyer</span>
+                                <h2>Complete Your Profile</h2>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="section-tittle section-tittle2 mb-70">
+                                  <div style=" width: 100px; height: 100px; margin-left: 40%; border-radius: 50%;"> 
+                                      
+                                    <img style=" width: 100px; height: 100px; border-radius: 50%;" src="/assets/img/hero/123.png"/>
+                                  
+                                </div>
+
+                        </div>
+                        </div>
+                        
+                    </div>
+
+                    <!--End Section Tittle  -->
+                    <form id="contact-form" action="/profile" method="POST">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-box user-icon mb-30">
+                                <input type="text" name="first_name" placeholder="First Name">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-box user-icon mb-30">
+                                <input type="text" name="last_name" placeholder="Last Name">
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-box subject-icon mb-30">
+                                <input type="text" name="cnic" placeholder="CNIC NO:">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-box subject-icon mb-30">
+                                <input type="text" name="contact_number" placeholder="Phone NO:">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-box email-icon mb-30">
+                                <input type="text" name="email" placeholder="Email">
+                            </div>
+                        </div>
+                       
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-box email-icon mb-30">
+                                <input type="text" name="address" placeholder="Address">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-box email-icon mb-30">
+                                <input type="text" name="specialization" placeholder="specialization">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-box email-icon mb-30">
+                                
+                               <select style="width: 270px; height: 50px;" name="city">
+                                   <option  value="-1">City</option>
+                                   <option  value="Lahore">Lahore</option>
+                                   <option  value="Sheikhupura">Sheikhpura</option>
+                                   <option  value="Safdarabad">Safdarabad</option>
+                                   <option  value="Farooqabad">Farooqabad</option>
+                               </select>
+                            </div>
+                        </div>
+                       
+                        
+                  
+                        <div style="margin-left: 100px;" class="submit-info">
+                                <button class="submit-btn2" type="submit">Update</button>
+                        </div>
+
+
+                        </div>   
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <%- include('partials/lawyer-news-feed.ejs') %>
-
-  
 
     <footer>
         <!--? Footer Start-->

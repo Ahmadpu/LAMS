@@ -1,14 +1,14 @@
+
+
+ 
 <% _.forEach(posts, function(post) { %>
 
+
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container">
+<div class="container" style="background-color: blue !important;">
 <div class="col-lg-8 col-lg-8 mx-auto">
     <div class="social-feed-separated">
-        <div class="social-avatar">
-            <a href="">
-                <img alt="image" src="<%= post.createdBy.profilePhoto %>">
-            </a>
-        </div>
+        
 
         <div class="social-feed-box">
             <div class="pull-right social-action dropdown">
@@ -20,6 +20,8 @@
                 </ul>
             </div>
             <div class="social-avatar">
+                    <img alt="image" src="<%= post.createdBy.profilePhoto %>">
+                    
                 <a style="color: black;">
                     <%= post.createdBy.fullname %>
                 </a>
@@ -61,3 +63,4 @@
 </div>
 
 <% }) %>
+

@@ -57,7 +57,7 @@ module.exports = function(passport, validation, email, User, Lawyer, CaseRequest
 
                             router.get('/profile', authenticate, this.profileView);
 
-
+                              router.get('/edit',authenticate,this.editProfile);
       //profile post router
                router.post('/profile', validation.getProfileUpdateValidation, this.profile);
       //profileUpdated post router
@@ -411,7 +411,13 @@ module.exports = function(passport, validation, email, User, Lawyer, CaseRequest
                                       let success = req.flash('success');
                                       res.render("profile.ejs", {posts: posts, hasErrors: errors.length > 0, errors: errors, hasSuccess: success.length > 0, messages: success, lawyer: lawyer});
                                     },
-  
+                    //Get editProfile route define
+                    editProfile:async function(req,res){
+                      let lawyer =req.session.lawyer;
+                      let errors = req.flash('errors');
+                      let success = req.flash('success');
+                      res.render("editProfile.ejs", {hasErrors: errors.length > 0, errors: errors, hasSuccess: success.length > 0, messages: success, lawyer: lawyer})
+                    },
           
          //post profile update route define 
 
