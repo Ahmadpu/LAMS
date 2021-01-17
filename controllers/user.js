@@ -2,12 +2,17 @@
 
 var {authenticate} = require('../middleware/authenticate');
 
-module.exports = function(passport, validation, email, User, Lawyer, CaseRequest,Blog,mongoose) {
+module.exports = function(passport, validation, email, User, Lawyer, CaseRequest,Blog,NewsPost) {
   return {
                             setRouting : function(router) {                              
                               router.get('/', this.homePage);
        //about
                               router.get('/about', this.about);
+
+                              router.get('/user/post', this.userAddPostView);
+                              router.post('/user/post', this.userAddPost);
+
+                              router.post("/lawyer/comment", this.addComment);
 
         //services
                              router.get('/services', this.services);
@@ -161,6 +166,44 @@ module.exports = function(passport, validation, email, User, Lawyer, CaseRequest
         }
         
       })
+    },
+
+    userAddPostView: function(req, res) {
+      let errors = req.flash('errors');
+      let success = req.flash('success');
+      
+      return res.render('user-post.ejs', {user: req.user, hasErrors: errors.length > 0, errors: errors, hasSuccess: success.length > 0, messages: success, user: req.user});
+    },
+
+
+    addComment: async function(req, res) {
+      let post = await NewsPost.findOne({_id: req.body.post_id});
+
+      if(post != null) {
+        let comment = {comment: req.body.comment, lawyer: req.session.lawyer.first_name};
+        post.comments.push(comment);
+
+        await post.save();
+      }
+
+      return res.redirect('/profile');
+
+    },
+
+    userAddPost: async function(req, res) {
+      let post = new NewsPost();
+
+      post.post_title = req.body.post_title;
+      post.post_description = req.body.post_description;
+      post.createdBy = req.user;
+
+      let response = await post.save();   
+
+      if(response) {
+        req.flash('success', ['Post has been created']);
+        res.redirect('/user/post');
+      }
+
     },
 
     userProfileUpdate: function(req, res) {
@@ -360,11 +403,13 @@ module.exports = function(passport, validation, email, User, Lawyer, CaseRequest
 
                   //Get profile route define
 
-                                   profileView : function(req, res){
-                                    let lawyer = req.session.lawyer;
-                                    let errors = req.flash('errors');
-                                    let success = req.flash('success');
-                                    res.render("profile.ejs", {hasErrors: errors.length > 0, errors: errors, hasSuccess: success.length > 0, messages: success, lawyer: lawyer});
+                                   profileView : async function(req, res){
+                                      let lawyer = req.session.lawyer;
+                                      let posts = await NewsPost.find({}).populate('createdBy'); 
+
+                                      let errors = req.flash('errors');
+                                      let success = req.flash('success');
+                                      res.render("profile.ejs", {posts: posts, hasErrors: errors.length > 0, errors: errors, hasSuccess: success.length > 0, messages: success, lawyer: lawyer});
                                     },
   
           

@@ -1,0 +1,63 @@
+<% _.forEach(posts, function(post) { %>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+<div class="col-lg-8 col-lg-8 mx-auto">
+    <div class="social-feed-separated">
+        <div class="social-avatar">
+            <a href="">
+                <img alt="image" src="<%= post.createdBy.profilePhoto %>">
+            </a>
+        </div>
+
+        <div class="social-feed-box">
+            <div class="pull-right social-action dropdown">
+                <button data-toggle="dropdown" class="dropdown-toggle btn-white">
+                    <i class="fa fa-angle-down"></i>
+                </button>
+                <ul class="dropdown-menu m-t-xs">
+                    <li><a href="#">Config</a></li>
+                </ul>
+            </div>
+            <div class="social-avatar">
+                <a style="color: black;">
+                    <%= post.createdBy.fullname %>
+                </a>
+                <small class="text-muted"><%=  post.createdAt %></small>
+            </div>
+            <div class="social-body">
+                <p>
+                    Post Title : <%= post.post_title %>
+                </p>
+                <p>
+                    Post Description : <%= post.post_description %>
+                </p>
+                <img src="./assets/img/gallery/home_blog1.png" class="img-responsive">
+                
+            </div>
+
+            
+
+            <div class="social-footer">
+                <ul>
+                    <% _.forEach(post.comments, function(comment) { %>
+                        <li><b><%= comment.lawyer %></b> : <%= comment.comment %></li>
+                    <% }) %>
+                </ul>
+                
+                <div class="social-comment">
+                    <div class="media-body">
+
+                        <form method="POST" action="/lawyer/comment">
+                            <input type="hidden" name="post_id" value="<%= post._id %>"/>
+                            <textarea class="form-control" name="comment" placeholder="Write comment..."></textarea>
+                            <button class="btn btn-primary my-2" type="submit">Comment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+
+<% }) %>

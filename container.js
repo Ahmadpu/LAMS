@@ -16,7 +16,8 @@ var simpleDependencies = [
   ['mongoose', 'mongoose'],
   ['CaseRequest', './models/case_request'],
   ['Blog', './models/blog-model'],
-  ['Lawyer', './models/lawyer-model']
+  ['Lawyer', './models/lawyer-model'],
+  ['NewsPost', './models/user-post']
 ];
 
 simpleDependencies.forEach(function(dependency){
